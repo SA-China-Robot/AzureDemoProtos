@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcService";
+
+package serv2;
+
+service Serv2Demo {
+  rpc Demo      (Serv2Request) returns (Serv2Reply);
+  rpc Return401 (Serv2Request) returns (Serv2Reply);
+  rpc Return403 (Serv2Request) returns (Serv2Reply);
+  rpc Return404 (Serv2Request) returns (Serv2Reply);
+}
+
+message Serv2Request {
+
+}
+
+message Serv2Reply {
+  string ReturnDescription = 1;
+}
